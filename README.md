@@ -28,12 +28,12 @@ InsuraPro Solutions offrirà un’applicazione console interattiva sviluppata in
 
 Il progetto in questione è stato sviluppato considerando le seguenti scelte progettuali:
 
-    - la base dati del CRM, che garantisce persistenza delle informazioni, sarà costituita da due file, uno per i clienti ed uno per le interazioni dei clienti con l'azienda;
-    - avviata l'applicazione, i dati verranno caricati in memoria per velocizzare il caricamento e le operazioni di modifica, cancellazione, inserimento di nuovi elementi (verranno previsti salvataggi periodici su file, in modo da ridurre il rischio di perdita di modifiche, o triggerare processi di salvataggio su file a seguito di modifiche importanti o alla chiusura dell'applicazione);
-    - vengono usate le classi ***Cliente*** ed **Interazione*** per incapsulare i dati delle omonime entità, nonché i metodi per gestire tali informazioni;
-    - vengono definite le classi ***GestioneClienti*** e ***GestioneInterazioni*** per mantenere in memoria le informazioni relative a Clienti e Interazioni, nonché i
+    1. la base dati del CRM, che garantisce persistenza delle informazioni, sarà costituita da due file, uno per i clienti ed uno per le interazioni dei clienti con l'azienda;
+    2. avviata l'applicazione, i dati verranno caricati in memoria per velocizzare il caricamento e le operazioni di modifica, cancellazione, inserimento di nuovi elementi (verranno previsti salvataggi periodici su file, in modo da ridurre il rischio di perdita di modifiche, o triggerare processi di salvataggio su file a seguito di modifiche importanti o alla chiusura dell'applicazione);
+    3. vengono usate le classi ***Cliente*** ed **Interazione*** per incapsulare i dati delle omonime entità, nonché i metodi per gestire tali informazioni;
+    4. vengono definite le classi ***GestioneClienti*** e ***GestioneInterazioni*** per mantenere in memoria le informazioni relative a Clienti e Interazioni, nonché i
     metodi per effettuare operazioni di inserimento, modifica, cancellazione e caricamento/salvataggio su file;
-    - come da specifica, all'utente finale dell'applicazione sarà consentito l'utilizzo della stessa solo tramite barra di comando e tramite l'utilizzo delle sole funzionalità richieste.
+    5. come da specifica, all'utente finale dell'applicazione sarà consentito l'utilizzo della stessa solo tramite barra di comando e tramite l'utilizzo delle sole funzionalità richieste.
 
 ## Istruzioni per l'utilizzo
 Per utilizzare e testare il seguente progetto in locale, è necessario procedere alla sua compilazione.
