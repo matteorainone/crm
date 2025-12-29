@@ -30,4 +30,6 @@ class GestioneInterazioni{
         
         void visualizzaTutte() const;
 
+        void rimuoviInterazioniCliente(const std::string& cod_fiscale);
+
 };

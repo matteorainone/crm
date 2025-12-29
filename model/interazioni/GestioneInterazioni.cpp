@@ -3,6 +3,8 @@
 #include "utils/utils.h"
 #include <string>
 #include <vector>
+#include <iostream>
+#include <algorithm>
 
 
 void GestioneInterazioni::caricaDaFile(){
@@ -97,4 +99,30 @@ void GestioneInterazioni::visualizzaTutte() const{
     for (auto& interazione : interazioni){
         interazione.showInteraction();
     }
+}
+
+void GestioneInterazioni::rimuoviInterazioniCliente(const std::string& cod_fiscale){
+    
+    std::vector<Interazione*> interazioniTarget = ricercaInterazioneCF(cod_fiscale);
+
+    for (auto& interazioneDaRimuovere : interazioniTarget){
+        if (interazioneDaRimuovere == nullptr){
+            std::cout << "Il riferimento passato non corrisponde a nessuna interazione esistente" << std::endl;
+        return;
+        }
+    
+        auto interazione = std::find_if(interazioni.begin(), interazioni.end(), [&interazioneDaRimuovere](const Interazione& in){
+            return &in == interazioneDaRimuovere;
+        });
+
+        if (interazione != interazioni.end()){
+            interazioni.erase(interazione);
+        } else {
+            std::cout << "L'interazione indicata non è presente nel CRM" << std::endl;
+        }    
+    }
+    
+    salvaSuFile();
+    std::cout << "Interazioni associate correttamente rimosse, base dati aggiornata" << std::endl;
+
 }

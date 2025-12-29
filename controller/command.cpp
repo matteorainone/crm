@@ -89,6 +89,7 @@ void GestoreComandi::modificaCliente(){
             client_manager.modificaEmailCliente(cliente, newEmail);
         }
         std::cout << "Modifica effettuata." << std::endl;
+        break;
     default:
         std::cout << "Inserito valore non valido. Fine processo modifica" << std::endl;
         break;
@@ -150,7 +151,9 @@ std::vector<Cliente*> GestoreComandi::ricercaCliente(){
 void GestoreComandi::eliminaCliente(){
     std::vector<Cliente*> clienti_target = ricercaCliente();
     for (auto& cliente : clienti_target){
+        std::string clienteCDF = cliente -> getCodFiscale();
         client_manager.rimuoviCliente(cliente);
+        interaction_manager.rimuoviInterazioniCliente(clienteCDF);
     }
 }
 
